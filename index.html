@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>This is what I learnt about html</title>
+</head>
+<body>
+    <div>
+        <h1 class="heading">HTML is all about Symantec</h1>
+        <p>html is element of webpage</p>
+        <p>This isn't a programming language since it doesn't actually do anything. It's like how English isn't a programming language either: you can't "run" English. Same idea with HTML: you can't "run" HTML. HTML is simply the language and pictures on the page. It's the static (which is another word for unchanging) content.</p>
+    </div>
+    <div>
+        <h2 class="heading">Tags</h2>
+        <p>Browsers aren't the only thing reading websites. Blind and people who can't see well will use screen readers to read web pages out loud to them; it uses things like headers to understand what information is important to read to the users</p>
+        <p>It's also how Google and Bing will understand the important details of your website.</p>
+        <p> In other words, it's important which type of tag you use. More than just the visual aesthetic is using those tags.</p>
+    </div>
+    <div>
+        <h2 class="heading">Types of Tags</h2>
+        <ul>
+            <li><h3>p tag</h3></li>
+            <ul>
+                <li>You'll put a paragraph of text together inside of a p tag. Only text goes in p tags.</li>
+            </ul>
+        </ul>
+        <ul>
+            <li><h3>a tag</h3></li>
+            <ul>
+                <li>An a tag is a link to somewhere else. This is a link that goes nowhere. Every a tag needs a destination of where the link should take you. We'll talk about that in the Attributes section.</li>
+                <li>Every a tag needs a destination of where the link should take you. We'll talk about that in the Attributes section.</li>
+            </ul>
+        </ul>
+        <ul>
+            <li><h3>div tag</h3></li>
+            <ul>
+                <li>div – Short for division. A div is sort of like a cardboard box. It's not really anything by itself; it's more defined by what's in it. </li>
+                <li>It's a generic container tag for grouping together other things. You'll use a lot of divs. Very useful with CSS</li>
+            </ul>
+        </ul>
+        <ul>
+            <li><h3>span tag</h3></li>
+            <ul>
+                <li>span – A container for small pieces of text. If a div is like a cardboard box, a span is like a 
+                    <span style="text-decoration: underline">Ziploc bag.</span></li>
+            </ul>
+        </ul>
+        <ul>
+            <li><h3>ul, ol tag</h3></li>
+            <ul>
+                <li>ol, ul, and li – Both ol and ul represent lists. In fact, this list of various tags is a ul!</li>
+                <li>A ul is an unordered list: it's a list of things that could be shuffled and still mean the same thing</li>
+                <li> An ol is an organized list: what comes first matters.</li>
+            </ul>
+        </ul>
+        <ul>
+            <li><h3>button tag</h3></li>
+            <ul>
+                <li><button>button is just button</button></li>
+                <li> A button can be used by JavaScript to respond to a user clicking it, or it can be used by a form to signal a user has completed filling it and it should submit the data.</li>
+            </ul>
+        </ul>
+        <ul>
+            <li><h3>img tag</h3></li>
+            <ul>
+                <li><img src="photo_2023-05-22_19-22-13.jpg" alt="capuchino"></li>
+                <li> An image. You use this to load images onto the page. This can be confusing because you can use CSS to bring in images too. </li>
+                <li>The key difference is that when the image is apart of the content, like a diagram that shows data you're talking about or a picture that shows something from the article, it should be an img tag. </li>
+                <li>alt to say what is in the image for screen readers so that the image will still be useful to blind people, people who are hard of seeing, and Google and Bing search engines. </li>
+            </ul>
+        </ul>
+        <ul>
+            <li><h3>input tag</h3></li>
+            <ul>
+                <li> Sometimes you need to gather input from the user. Luckily for us, the browser is already really good at doing that. </li>
+                <li>It gives us several types of inputs that you can use </li>
+                <li><input type="text"></li>
+                <li><input type="color"></li>
+                <li><input type="number"></li>
+                <li><input type="file"></li>
+                <li><input type="datetime-local"></li>
+                <li><input type="checkbox"></li>
+            </ul>
+        </ul>
+        <ul>
+            <li><h3>textarea tag</h3></li>
+            <ul>
+                <li> Similar to an input but for a lot more text. </li>
+                <li> Similar to an input but for a lot more text. You'd type long-form responses in here that could linebreaks in it (a linebreak happens when you hit "return" or "enter" on your keyboard.) </li>
+                <textarea></textarea>
+            </ul>
+        </ul>
+        <ul>
+            <li><h3>select and option tag</h3></li>
+            <ul>
+                <li>Sometimes you want to limit a user to a certain group of options to select from. What country you're from, what month you were born in, etc. </li>
+                <li>A select is a user-interactive input that a user can select an option from a dropdown menu. An option is one of the available options. </li>
+                <li>Each option needs a value that will be sent back to the server if the user select that option. What's inside of the option is what shown to the user. </li>
+                <li>
+                    <select>
+                        <option value="value send to server">value user see</option>
+                        <option value="value send to server2">value user see2</option>
+                    </select>
+                </li>
+            </ul>
+        </ul>
+        <ul>
+            <li><h3>form tag</h3></li>
+            <ul>
+                <li>form – A group of html tags related to gathering data from a user. This will be some combination of input, textarea, and select tags. </li>
+                <li>You can then use this form element to send that data to your server. A form tag itself doesn't show anything; it's a just a container for the other tags. </li>
+            </ul>
+        </ul>
+        <ul>
+            <li><h3>table tag</h3></li>
+            <ul>
+                <li>table, tr, and td – Like making a table in Word or Excel. If you have a table of data, this is the best way to display it.</li>
+                <li>The table is the container for the whole table, tr represents a row, and td represents one cell in the table.</li>
+                <table>
+                    <tr>
+                        <td>(0,0)</td>
+                        <td>(0,1)</td>
+                    </tr>
+                    <tr>
+                        <td>(1,0)</td>
+                        <td>(1,1)</td>
+                    </tr>
+                </table>
+            </ul>
+        </ul>
+        <!--this is just a comments-->
+    </div>
+    <div><a href="attributes.html"><button>Go to the Next page</button></a></div>
+    
+</body>
+</html>
