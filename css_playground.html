@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .main-grid-table {
+            margin: 30px;
+        }
+        .main-title {
+            justify-content: center;
+            display: flex;
+            font-style: oblique;
+            font-size: 30px;
+        }
+        .top-menu {
+            grid-area: top-menu;
+            list-style-type: none;
+            display: flex;
+            justify-content:space-around;
+            font-size: 25px;
+            font-style: italic;
+            padding: 0px;
+            margin: 0px;
+            border: 1px solid black;
+        }
+        .article-1 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            grid-area: article-1;
+            border: 1px solid black;
+        }
+        .article-2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            grid-area: article-2;
+            border: 1px solid black;
+        }
+        .article-3 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            grid-area: article-3;
+            border: 1px solid black;
+        }
+        .article-4 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            grid-area: article-4;
+            border: 1px solid black;
+        }
+        .article-5 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            grid-area: article-5;
+            border: 1px solid black;
+        }
+        .main-grid-table {
+            display: grid;
+            grid-template-areas: 
+                "top-menu top-menu top-menu"
+                "article-1 article-2 article-3"
+                "article-4 article-5 article-5"
+            ;
+        }
+        .article-title {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .article-content {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .article-pic {
+            padding: 20px;
+            display: flex;
+            height: 200px;
+            justify-content: center;
+        }
+        .nav {
+            color: inherit;
+            text-decoration: none;
+        }
+        .nav:hover {
+            color: blue;
+            text-decoration: underline;
+        }
+        
+
+    </style>
+    <header class="main-title">
+        <h1>The News Times</h1>
+    </header>
+    <div class="main-grid-table">
+        <ul class="top-menu">
+            <li class="menu1"><a class="nav" href="index.html">Politics</a></li>
+            <li class="menu2"><a class="nav" href="index.html">Tech</a></li>
+            <li class="menu3"><a class="nav" href="index.html">Local</a></li>
+            <li class="menu4"><a class="nav" href="index.html">Opinion</a></li>
+            <li class="menu5"><a class="nav" href="index.html">Sports</a></li>
+        </ul>
+
+        <article class="article-1">
+            <div class="article-title">
+                <h3> Dolor quos consectetur ducimus repellat.</h2>
+            </div>
+            <div class="article-content">
+                <p>Elit porro perferendis quo voluptatem id. Cumque consequatur animi quas nesciunt aspernatur? Dolorum ipsam distinctio eaque atque cum? Officia laborum.</p>
+            </div>
+            <div class="article-content">
+                <p>Elit porro perferendis quo voluptatem id. Cumque consequatur animi quas nesciunt aspernatur? Dolorum ipsam distinctio eaque atque cum? Officia laborum.</p>
+            </div>
+        </article>
+
+        <article class="article-2">
+            <div class="article-title">
+                <h3>Dolor quos consectetur ducimus repellat.</h3>
+            </div>
+            <div class="article-pic">
+                <img src="photo_2023-05-22_19-22-13.jpg" alt="capuchino pic">
+            </div>
+            <div class="article-content">
+                <p>Elit porro perferendis quo voluptatem id. Cumque consequatur animi quas nesciunt aspernatur? Dolorum ipsam distinctio eaque atque cum? Officia laborum.</p>
+            </div>
+            <div class="article-content">
+                <p>Elit porro perferendis quo voluptatem id. Cumque consequatur animi quas nesciunt aspernatur? Dolorum ipsam distinctio eaque atque cum? Officia laborum.</p>
+            </div>
+        </article>
+
+        <article class="article-3">
+            <div class="article-title">
+                <h3>Dolor quos consectetur ducimus repellat.</h3>
+            </div>
+            <div class="article-content">
+                <p>Elit porro perferendis quo voluptatem id. Cumque consequatur animi quas nesciunt aspernatur? Dolorum ipsam distinctio eaque atque cum? Officia laborum.</p>
+            </div>
+            <div class="article-content">
+                <p>Elit porro perferendis quo voluptatem id. Cumque consequatur animi quas nesciunt aspernatur? Dolorum ipsam distinctio eaque atque cum? Officia laborum.</p>
+            </div>
+        </article>
+
+        <article class="article-4">
+            <div class="article-title">
+                <h3>Dolor quos consectetur ducimus repellat.</h3>
+            </div>
+            <div class="article-content">
+                <p>Elit porro perferendis quo voluptatem id. Cumque consequatur animi quas nesciunt aspernatur? Dolorum ipsam distinctio eaque atque cum? Officia laborum.</p>
+            </div>
+            <div class="article-content">
+                <p>Elit porro perferendis quo voluptatem id. Cumque consequatur animi quas nesciunt aspernatur? Dolorum ipsam distinctio eaque atque cum? Officia laborum.</p>
+            </div>
+        </article>
+
+        <article class="article-5">
+            <div class="article-title">
+                <h3>Dolor quos consectetur ducimus repellat.</h3>
+            </div>
+            <div class="article-content">
+                <p>Elit porro perferendis quo voluptatem id. Cumque consequatur animi quas nesciunt aspernatur? Dolorum ipsam distinctio eaque atque cum? Officia laborum.</p>
+            </div>
+            <div class="article-content">
+                <p>Elit porro perferendis quo voluptatem id. Cumque consequatur animi quas nesciunt aspernatur? Dolorum ipsam distinctio eaque atque cum? Officia laborum.</p>
+            </div>
+            <div class="article-content">
+                <p>Elit porro perferendis quo voluptatem id. Cumque consequatur animi quas nesciunt aspernatur? Dolorum ipsam distinctio eaque atque cum? Officia laborum.</p>
+            </div>
+        </article>
+
+    </div>
+</body>
+</html>

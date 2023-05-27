@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coffe Masters</title>
+</head>
+<link
+  href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+  rel="stylesheet"
+/>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        margin: 0px;
+        background: #EFF0F0;
+    }
+    .common-font {
+        font-family: sans-serif;
+    }
+
+    .card {
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    }
+
+    .header-bar {
+        display: flex;
+        background: rgb(67, 40, 28);
+        color: rgb(251, 242, 192);
+        height: 60px;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+    }
+    .header-title {
+        margin-left: 10px;
+        font-size: 15px;
+    }
+    .header-image {
+        max-height: 40px;
+    }
+
+    .main-border {
+        margin-top: 50px;
+        margin-bottom: 200px;
+        height: 500px;
+        display: flex;
+        justify-content: space-around;
+    }
+    .left-border {
+        width: 45%;
+        height: 70%;
+        background: #EEE1D5;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .left-orders {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 90%;
+    }
+
+    .border-header {
+        color: brown;
+    }
+    .order-grid {
+        display: grid;
+        grid-template-columns: 1fr 8fr 1fr;
+        border-bottom: 1px solid brown;
+        padding-bottom: 10px;
+    }
+    .order-grid:last-child {
+        border-bottom: none;
+    }
+    .order-cnt {
+
+    }
+    .order-menu {
+        font-weight: bold;
+
+    }
+    .order-price {
+        font-weight: bold;
+    }
+    .order-ing {
+        color: brown;
+        font-size: 12px;
+
+    }
+
+
+    .right-border {
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 20px;
+        height: 80%;
+
+    }
+    .name {
+        padding: 20px;
+        padding-top: 0px;
+        background: #EEE1D5;
+    }
+    .payment {
+        height: 400px;
+        padding: 20px;
+        padding-top: 0px;
+        background: #EEE1D5;
+    }
+    .payment-flex {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 80%;
+    }
+
+    .input-field-1 {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+    }
+
+    .input-field-2 {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+    }
+
+    .input-field-3 {
+        position: relative;
+        display: inline-block;
+        width: 30%;
+    }
+
+    .first-label {
+        position: absolute;
+        left: 30px;
+        top: -7px;
+        background: #EEE1D5;
+        color: brown;
+        font-size: 12px;
+    }
+    .first-in {
+        border-color: brown;
+        border-radius: 5px;
+        width: 100%;
+        height: 40px;
+        border-radius: 30px;
+        padding-left: 30px;
+        background: #EEE1D5;
+    }
+    .footer-flex {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 250px;
+    }
+    .footer-table {
+        width: 500px;
+    }
+
+    .menu {
+        width: 150px;
+        text-align: left;
+    }
+    .price {
+        width: 150px;
+        text-align: right;
+    }
+    .total {
+        padding-top: 20px;
+        font-weight: bold;
+    }
+
+    .footer-button {
+        height: 40px;
+        width: 80%;
+        border-radius: 50px;
+        background-color: #DEB993;
+        font-size: 15px;
+    }
+    
+</style>
+<body>
+
+    <div class="header-bar">
+        <img class="header-image" src="coffee_masters_logo.png" alt="coffee masters">
+        <p class="header-title common-font">Coffee Masters</p>
+    </div>
+
+    <div class="main-border">
+        <div class="left-border card">
+            <div class="border-header">
+                <p>ITEMS</p>
+            </div>
+            <div class="left-orders">
+                <div class="order-grid">
+                    <div class="order-cnt">1x</div>
+                    <div class="order-menu">Capuccino</div>
+                    <div class="order-price">$3.35</div>
+                    <div></div>
+                    <div class="order-ing">Lite foam</div>
+                    <div></div>
+                </div>
+                <div class="order-grid">
+                    <div class="order-cnt">1x</div>
+                    <div class="order-menu">Capuccino</div>
+                    <div class="order-price">$3.35</div>
+                    <div></div>
+                    <div class="order-ing">Lite Milk</div>
+                    <div></div>
+                    <div></div>
+                    <div class="order-ing">Double Espresso</div>
+                    <div></div>
+
+                </div>
+                <div class="order-grid">
+                    <div class="order-cnt">1x</div>
+                    <div class="order-menu">Capuccino</div>
+                    <div class="order-price">$3.35</div>
+                    <div></div>
+                    <div class="order-ing">Lite foam</div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-border">
+            <div class="name card">
+                <div class="border-header">
+                    <p>NAME</p>
+                </div>
+                <div class="input-field-1">
+                    <label for="first-input" class="first-label">Name for order</label>
+                    <input id="first-input" type="text" class="first-in"/>
+                </div>
+            </div>
+
+            <div class="payment card">
+                <div class="border-header">
+                    <p>PAYMENT</p>
+                </div>
+                <div class="payment-flex">
+                    <div class="input-field-2">
+                        <label for="first-input" class="first-label">Name for order</label>
+                        <input id="first-input" type="text" class="first-in"/>
+                    </div>
+                    <div class="input-field-3">
+                        <label for="first-input" class="first-label">Name for order</label>
+                        <input id="first-input" type="text" class="first-in"/>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="footer-flex">
+
+        <table class="fotter-table">
+            <tr>
+                <td class="menu">Subtotal:</td>
+                <td class="price">$9.65</td>
+            </tr>
+            <tr>
+                <td class="menu">Tax:</td>
+                <td class="price">$0.82</td>
+            </tr>
+            <tr>
+                <td class="total menu">Total:</td>
+                <td class="total price">$10.47</td>
+            </tr>
+        </table>
+
+        <button class="footer-button" type="button"> Place order</button>
+
+    </footer>
+</body>
+</html>
