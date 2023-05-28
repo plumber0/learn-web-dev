@@ -24,10 +24,14 @@ function getUserKeyInput(event) {
     if (event.key === "Enter") {
       if (letters.length === 5) {
         validateWord(letters);
+        letters = "";          
+        numOfTry += 1;
       }
     } else if (event.key === "Backspace") {
       if (letters.length > 0) {
+        const targetsIndex = coordinateToIndex(numOfTry, letters.length - 1);
         letters = letters.slice(0, -1);
+        targets[targetsIndex].textContent = "";
         console.log(letters);
       }
     }
@@ -37,6 +41,7 @@ function getUserKeyInput(event) {
     }
   }
 }
+
 
 function insertLetter(event) {
   if (letters.length === 5) {
