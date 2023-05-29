@@ -20,19 +20,109 @@ function repalceLastLetter(inputStr, inputCharacter) {
   return newStr;
 }
 
-function validateWord(letters) {
-  console.log(letters);
-  letters = "";
+async function validateWord() {
+    insertAnimation();
+
+    let data = {word: letters}
+    let payload = {
+      method: 'POST', 
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    }
+    const res = await fetch(validateUrl, payload)
+    const result = await res.json();
+
+    await removeAnimation();
+    return result.validWord
+}
+
+function getBoxesArray () {
+    let targetBoxes = [];
+    for (i=0; i <5; i++) {
+        targetBoxes.push(boxes[coordinateToIndex(numOfTry, i)])
+    }
+    return targetBoxes
+}
+
+
+function isItAnswer() {
+    return letters === answerWord
+}
+
+
+function renderCongrat () {
+    const titleLetter = document.querySelector(".title-letter")
+    titleLetter.classList.add('rainbow-boi')
+
+    setTimeout(() => {
+        window.alert("congrat");
+    }, 0);
+}
+
+function renderHint () {
+    let rightPositionIndex = [];
+    let isInLettersIndex = [];
+    let notIncludeIndex = [];
+    let isInLetters = new Set();
+
+    for (i=0; i<5; i++) {
+        if (answerWord[i] === letters[i]) {
+            rightPositionIndex.push(i);
+        } else if (answerWord.includes(letters[i])) {
+            if (!isInLetters.has(letters[i])) {
+                isInLettersIndex.push(i)
+            }
+            isInLetters.add(letters[i])
+        } else {
+            notIncludeIndex.push(i)
+        }
+    }
+
+    rightPositionIndex.forEach(ele => {boxes[coordinateToIndex(numOfTry, ele)].style.backgroundColor = "green"})
+    isInLettersIndex.forEach(ele => {boxes[coordinateToIndex(numOfTry, ele)].style.backgroundColor = "yellow"})
+    notIncludeIndex.forEach(ele => {boxes[coordinateToIndex(numOfTry, ele)].style.backgroundColor = "blue"})
+}
+
+
+
+
+async function renderInvalid () {
+    const targetBoxes = getBoxesArray();
+    targetBoxes.forEach((ele) => {ele.style.border="3px solid red"})
+    await delay(500);
+    targetBoxes.forEach((ele) => {ele.style.border="3px solid grey"})
+}
+
+function delay(milliseconds) {
+    return new Promise(resolve => setTimeout(resolve, milliseconds));
+}
+
+
+async function processEnter() {
+
+    if (await validateWord()){
+        if (isItAnswer()) {
+            renderCongrat();
+        } else {
+            renderHint();
+            letters = "";          
+            numOfTry += 1;
+        }
+        
+    } else {
+        renderInvalid();
+        console.log('invalid');
+    }
 }
 
 function getUserKeyInput(event) {
   if (event.key.length > 1) {
     if (event.key === "Enter") {
-      if (letters.length === 5) {
-        validateWord(letters);
-        letters = "";          
-        numOfTry += 1;
-      }
+    if (letters.length === 5) {
+        processEnter()
+    }
     } else if (event.key === "Backspace") {
       if (letters.length > 0) {
         const targetsIndex = coordinateToIndex(numOfTry, letters.length - 1);
@@ -74,7 +164,8 @@ async function getWord() {
     insertAnimation();
     const res = await fetch(getWordUrl);
     const result = await res.json();
-    answerWord = result
+    answerWord = result.word
+    console.log(answerWord);
     removeAnimation();
 }
 
@@ -88,7 +179,7 @@ function insertAnimation () {
     animationScreen.appendChild(imgTag);
 }
 
-function removeAnimation () {
+async function removeAnimation () {
     const spinny = document.querySelector(".spinny-capuchino")
     spinny.remove();
 }
