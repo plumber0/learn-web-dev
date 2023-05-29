@@ -1,7 +1,13 @@
-console.log("abc");
+let answerWord = "";
+
+const getWordUrl = "https://words.dev-apis.com/word-of-the-day";
+const validateUrl = "https://words.dev-apis.com/validate-word";
 
 const boxes = document.querySelectorAll(".word-box");
 const targets = document.querySelectorAll(".target-box");
+const gamingBoard = document.querySelector(".gaming-board");
+const animationScreen = document.querySelector(".animation-screen")
+
 let numOfTry = 0;
 let letters = "";
 
@@ -64,9 +70,35 @@ function isLetter(letter) {
   return /^[a-zA-Z]$/.test(letter);
 }
 
-const gamingBoard = document.querySelector(".gaming-board");
+async function getWord() {
+    insertAnimation();
+    const res = await fetch(getWordUrl);
+    const result = await res.json();
+    answerWord = result
+    removeAnimation();
+}
 
-gamingBoard.addEventListener("keydown", getUserKeyInput);
-console.log(gamingBoard);
+function insertAnimation () {
+    const imgTag = document.createElement("img");
 
-//
+    imgTag.setAttribute('class', 'spinny-capuchino');
+    imgTag.setAttribute('src', 'cap-modified.png');
+    imgTag.setAttribute('alt', 'coffee');
+
+    animationScreen.appendChild(imgTag);
+}
+
+function removeAnimation () {
+    const spinny = document.querySelector(".spinny-capuchino")
+    spinny.remove();
+}
+
+function init() {
+    getWord();
+    gamingBoard.addEventListener("keydown", getUserKeyInput);
+
+}
+
+init();
+
+
